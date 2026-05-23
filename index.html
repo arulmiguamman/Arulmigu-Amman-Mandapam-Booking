@@ -6,8 +6,10 @@
 
   <title>Arulmigu Amman Thirumana Mandapam | அருள்மிகு அம்மன் திருமண மண்டபம்</title>
 
-  <meta name="description" content="Arulmigu Amman Thirumana Mandapam, Pudur, R.K. Pet, Thiruvallur. Check mandapam date availability, call booking, WhatsApp booking, Google Maps location, GPay option, Tamil and English website." />
-  <meta name="keywords" content="Arulmigu Amman Thirumana Mandapam, Marriage hall in R.K. Pet, Thirumana Mandapam in Thiruvallur, Mandapam booking R.K. Pet, Marriage hall near Pudur, Wedding hall Thiruvallur, திருமண மண்டபம், புதூர் திருமண மண்டபம், ஆர்.கே.பேட்டை திருமண மண்டபம்" />
+  <meta name="description" content="Arulmigu Amman Thirumana Mandapam, Pudur, R.K. Pet, Thiruvallur. Marriage, engagement, seemantham, family function and room booking available. Check date availability, call booking, WhatsApp booking, Google Maps, temple details and GPay option." />
+
+  <meta name="keywords" content="Arulmigu Amman Thirumana Mandapam, Marriage hall in R.K. Pet, Thirumana Mandapam in Thiruvallur, Mandapam booking R.K. Pet, Marriage hall near Pudur, Wedding hall Thiruvallur, Room booking R.K. Pet, Seemantham hall, Engagement hall, திருமண மண்டபம், புதூர் திருமண மண்டபம், ஆர்.கே.பேட்டை திருமண மண்டபம், சீமந்தம் மண்டபம்" />
+
   <meta name="author" content="Arulmigu Amman Thirumana Mandapam" />
   <meta name="robots" content="index, follow" />
 
@@ -20,7 +22,7 @@
     "@context": "https://schema.org",
     "@type": "EventVenue",
     "name": "Arulmigu Amman Thirumana Mandapam",
-    "description": "Marriage hall in Pudur, R.K. Pet Taluk, Thiruvallur District with seating, dining, parking, generator, water and guest room facilities.",
+    "description": "A peaceful and spiritual marriage hall in Pudur, R.K. Pet Taluk, Thiruvallur District for marriage, engagement, seemantham, family functions and room booking.",
     "telephone": "+919751672314",
     "email": "arulmiguammanmandapam1306@gmail.com",
     "address": {
@@ -40,6 +42,16 @@
         "@type": "LocationFeatureSpecification",
         "name": "Dining Hall Seating",
         "value": "120 people"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Guest Rooms",
+        "value": "5 rooms"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Room Booking",
+        "value": "Available"
       },
       {
         "@type": "LocationFeatureSpecification",
@@ -64,13 +76,13 @@
       --green: #15803d;
       --dark: #2f1b0c;
       --muted: #6b5b4b;
-      --light: #fff7ed;
       --white: #ffffff;
       --red-soft: #fee2e2;
       --green-soft: #dcfce7;
       --yellow-soft: #fef9c3;
       --blue-soft: #e0f2fe;
       --purple-soft: #f3e8ff;
+      --orange-soft: #ffedd5;
       --shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
       --radius: 24px;
     }
@@ -123,7 +135,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
     }
 
@@ -386,24 +398,193 @@
       border-left: 8px solid var(--secondary);
     }
 
-    .red-bg {
-      background: var(--red-soft);
+    .red-bg { background: var(--red-soft); }
+    .green-bg { background: var(--green-soft); }
+    .yellow-bg { background: var(--yellow-soft); }
+    .blue-bg { background: var(--blue-soft); }
+    .purple-bg { background: var(--purple-soft); }
+    .orange-bg { background: var(--orange-soft); }
+
+    .trust-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 72px 20px 50px;
     }
 
-    .green-bg {
-      background: var(--green-soft);
+    .trust-banner {
+      background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.38), transparent 32%),
+        linear-gradient(135deg, #7f1d1d, #b91c1c, #f97316);
+      color: white;
+      border-radius: 32px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .yellow-bg {
-      background: var(--yellow-soft);
+    .trust-banner::after {
+      content: "✦";
+      position: absolute;
+      right: 26px;
+      top: 12px;
+      font-size: 90px;
+      color: rgba(255,255,255,0.16);
     }
 
-    .blue-bg {
-      background: var(--blue-soft);
+    .trust-banner h2 {
+      font-size: clamp(28px, 4.5vw, 48px);
+      margin-bottom: 12px;
+      line-height: 1.25;
     }
 
-    .purple-bg {
-      background: var(--purple-soft);
+    .trust-banner h3 {
+      font-size: clamp(20px, 3vw, 30px);
+      margin-bottom: 18px;
+      color: #fef3c7;
+    }
+
+    .trust-banner p {
+      max-width: 940px;
+      margin: 0 auto 14px;
+      font-size: 17px;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .achievement-card {
+      background: white;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      border-top: 6px solid var(--secondary);
+    }
+
+    .achievement-card strong {
+      display: block;
+      font-size: 34px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .achievement-card span {
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .disclaimer {
+      text-align: center;
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .temple-service-card {
+      background: linear-gradient(135deg, #fff7ed, #fef3c7);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border-left: 8px solid var(--gold);
+    }
+
+    .purpose-card {
+      background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border-left: 8px solid var(--green);
+    }
+
+    .temple-service-card h3,
+    .purpose-card h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .temple-service-card h3 {
+      color: var(--primary);
+    }
+
+    .purpose-card h3 {
+      color: var(--green);
+    }
+
+    .trust-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .trust-point {
+      background: white;
+      padding: 22px;
+      border-radius: 22px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.1);
+      font-weight: 700;
+      border: 1px solid rgba(185, 28, 28, 0.08);
+    }
+
+    .trust-final-line {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff1f2, #ffedd5, #fef9c3);
+      text-align: center;
+      font-weight: 900;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow);
+      font-size: 18px;
+    }
+
+    .temple-section-box {
+      background:
+        radial-gradient(circle at top left, rgba(250,204,21,0.35), transparent 32%),
+        linear-gradient(135deg, #fff7ed, #fff1f2, #fef9c3);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(185, 28, 28, 0.12);
+    }
+
+    .temple-title {
+      color: var(--primary);
+      font-size: clamp(26px, 4vw, 40px);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .temple-highlight {
+      background: white;
+      padding: 22px;
+      border-radius: 22px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+      border-left: 7px solid var(--gold);
+    }
+
+    .quote-box {
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+      color: white;
+      text-align: center;
+      font-weight: 800;
     }
 
     .calendar-box {
@@ -417,6 +598,15 @@
     .calendar-note {
       background: #fef3c7;
       border-left: 7px solid var(--gold);
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    .privacy-note {
+      background: #e0f2fe;
+      border-left: 7px solid #0284c7;
       padding: 16px;
       border-radius: 16px;
       margin-bottom: 18px;
@@ -460,17 +650,9 @@
       display: inline-block;
     }
 
-    .dot-red {
-      background: #dc2626;
-    }
-
-    .dot-green {
-      background: #16a34a;
-    }
-
-    .dot-yellow {
-      background: #eab308;
-    }
+    .dot-red { background: #dc2626; }
+    .dot-green { background: #16a34a; }
+    .dot-yellow { background: #eab308; }
 
     iframe.calendar {
       width: 100%;
@@ -635,20 +817,18 @@
       font-weight: bold;
     }
 
-    .call-float {
-      background: var(--primary);
-    }
-
-    .whatsapp-float {
-      background: #16a34a;
-    }
+    .call-float { background: var(--primary); }
+    .whatsapp-float { background: #16a34a; }
 
     @media (max-width: 980px) {
       .grid,
       .grid-2,
       .contact-wrap,
       .legend,
-      .stats {
+      .stats,
+      .trust-grid,
+      .achievement-grid,
+      .trust-points {
         grid-template-columns: 1fr;
       }
 
@@ -667,6 +847,10 @@
 
       .stats {
         margin-top: 22px;
+      }
+
+      .trust-banner {
+        padding: 30px 20px;
       }
 
       iframe.calendar {
@@ -693,12 +877,17 @@
         flex-direction: column;
       }
 
-      section {
+      section,
+      .trust-section {
         padding: 46px 15px;
       }
 
       .hero {
         padding: 58px 15px;
+      }
+
+      .trust-banner h2 {
+        font-size: 30px;
       }
 
       iframe.calendar {
@@ -715,10 +904,10 @@
 
 <body>
   <div class="top-bar">
-    📞 <span class="ta-content">முன்பதிவு</span><span class="en-content">Booking</span>:
+    📞 <span class="ta-content">மண்டபம் / அறை முன்பதிவு</span><span class="en-content">Hall / Room Booking</span>:
     <a href="tel:9751672314">9751672314</a>
     | 📧 <a href="mailto:arulmiguammanmandapam1306@gmail.com?subject=Mandapam%20Booking%20Enquiry">arulmiguammanmandapam1306@gmail.com</a>
-    | 💳 GPay Available
+    | 💳 GPay: 9159299878
   </div>
 
   <header>
@@ -733,7 +922,8 @@
       </div>
 
       <div class="nav-links">
-        <a href="#about"><span class="ta-content">விவரங்கள்</span><span class="en-content">About</span></a>
+        <a href="#trust"><span class="ta-content">நம்பிக்கை</span><span class="en-content">Trust</span></a>
+        <a href="#temple"><span class="ta-content">ஆலயம்</span><span class="en-content">Temple</span></a>
         <a href="#facilities"><span class="ta-content">வசதிகள்</span><span class="en-content">Facilities</span></a>
         <a href="#events"><span class="ta-content">நிகழ்வுகள்</span><span class="en-content">Events</span></a>
         <a href="#booking"><span class="ta-content">முன்பதிவு</span><span class="en-content">Booking</span></a>
@@ -753,8 +943,8 @@
     <section class="hero" id="home">
       <div class="hero-content">
         <div class="badge">
-          <span class="ta-content">திருமணம் • நிச்சயதார்த்தம் • வரவேற்பு • குடும்ப விழாக்கள்</span>
-          <span class="en-content">Marriage • Engagement • Reception • Family Functions</span>
+          <span class="ta-content">திருமணம் • நிச்சயதார்த்தம் • சீமந்தம் • அறை முன்பதிவு</span>
+          <span class="en-content">Marriage • Engagement • Seemantham • Room Booking</span>
         </div>
 
         <h1>
@@ -764,10 +954,10 @@
 
         <p>
           <span class="ta-content">
-            உங்கள் மகிழ்ச்சியான தருணங்களை சிறப்பாக மாற்றும் அழகான, வசதியான, சுத்தமான மற்றும் எளிதில் அணுகக்கூடிய திருமண மண்டபம்.
+            மக்களின் நம்பிக்கையை பெற்ற, அமைதியான ஆன்மிக சூழல் கொண்ட புனித மண்டபம். மண்டப முன்பதிவுடன் அறை முன்பதிவும் கிடைக்கும்.
           </span>
           <span class="en-content">
-            A beautiful, clean, comfortable, and easily accessible marriage hall for your memorable family celebrations.
+            A sacred, peaceful and spiritual mandapam trusted by families. Hall booking and room booking are available.
           </span>
         </p>
 
@@ -775,16 +965,13 @@
           <a class="btn btn-light" href="tel:9751672314">📞 Call 9751672314</a>
 
           <a class="btn btn-green"
-             href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20date%20availability%20for%20Arulmigu%20Amman%20Thirumana%20Mandapam.%20%E0%AE%A4%E0%AF%87%E0%AE%A4%E0%AE%BF%20%E0%AE%95%E0%AE%BF%E0%AE%9F%E0%AF%88%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%AE%E0%AE%BE%20%E0%AE%8E%E0%AE%A9%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E0%AE%A4%E0%AF%86%E0%AE%B0%E0%AE%BF%E0%AE%AF%20%E0%AE%B5%E0%AF%87%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%8D."
+             href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20date%20availability%20for%20Arulmigu%20Amman%20Thirumana%20Mandapam%20and%20room%20booking.%20%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%AA%E0%AE%AE%E0%AF%8D%20%E0%AE%AE%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AF%8D%20%E0%AE%85%E0%AE%B1%E0%AF%88%20%E0%AE%AE%E0%AF%81%E0%AE%A9%E0%AF%8D%E0%AE%AA%E0%AE%A4%E0%AE%BF%E0%AE%B5%E0%AF%81%20%E0%AE%B5%E0%AE%BF%E0%AE%B5%E0%AE%B0%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AF%87%E0%AE%B5%E0%AF%88."
              target="_blank"
              rel="noopener noreferrer">💬 WhatsApp Booking</a>
 
           <a class="btn btn-gold" href="#availability">📅 Check Available Dates</a>
 
-          <a class="btn btn-outline"
-             href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7"
-             target="_blank"
-             rel="noopener noreferrer">📍 Google Maps</a>
+          <a class="btn btn-outline" href="#temple">🛕 About Temple</a>
         </div>
       </div>
     </section>
@@ -802,7 +989,7 @@
 
       <div class="stat-card">
         <strong>5</strong>
-        <span><span class="ta-content">விருந்தினர் அறைகள்</span><span class="en-content">Guest Rooms</span></span>
+        <span><span class="ta-content">முன்பதிவு செய்யக்கூடிய அறைகள்</span><span class="en-content">Bookable Rooms</span></span>
       </div>
 
       <div class="stat-card">
@@ -811,53 +998,204 @@
       </div>
     </div>
 
-    <section id="about">
-      <div class="section-title">
-        <span class="kicker">
-          <span class="ta-content">எங்களை பற்றி</span>
-          <span class="en-content">About Us</span>
-        </span>
+    <section class="trust-section" id="trust">
+      <div class="trust-banner">
         <h2>
-          <span class="ta-content">சிறந்த குடும்ப விழாக்களுக்கான சரியான இடம்</span>
-          <span class="en-content">A Perfect Place for Family Celebrations</span>
+          <span class="ta-content">அருள்மிகு அம்மன் திருமண மண்டபம்</span>
+          <span class="en-content">Arulmigu Amman Thirumana Mandapam</span>
         </h2>
+
+        <h3>
+          <span class="ta-content">மக்களின் நம்பிக்கையை பெற்ற புனித மண்டபம்</span>
+          <span class="en-content">A Sacred Mandapam Trusted by People</span>
+        </h3>
+
         <p>
           <span class="ta-content">
-            சித்தூர் மெயின் ரோடு, புதூர், ஆர்.கே.பேட்டை தாலுகா, திருவள்ளூர் மாவட்டத்தில் அமைந்துள்ள எளிதில் அணுகக்கூடிய திருமண மண்டபம்.
+            அருள்மிகு அம்மன் திருமண மண்டபம், திருமணம், நிச்சயதார்த்தம், சீமந்தம் மற்றும் குடும்ப விழாக்கள் நடத்த ஏற்ற அமைதியான, ஆன்மிக சூழல் கொண்ட மண்டபமாகும்.
           </span>
           <span class="en-content">
-            Located on Chittoor Main Road, Pudur, R.K. Pet Taluk, Thiruvallur District, with easy access for guests.
+            Arulmigu Amman Thirumana Mandapam is a peaceful and spiritual venue suitable for marriages, engagements, seemantham ceremonies and family functions.
+          </span>
+        </p>
+
+        <p>
+          <span class="ta-content">
+            இம்மண்டபத்தில் நடைபெற்ற பல திருமணங்கள் மற்றும் குடும்ப விழாக்கள் இறை அருளுடன் சிறப்பாக நிறைவேறியுள்ளன. இங்கு திருமணம் செய்த பல தம்பதிகள் நல்ல ஒற்றுமையுடனும், மகிழ்ச்சியான குடும்ப வாழ்வுடனும் வாழ்ந்து வருகின்றனர் என்று மக்கள் அன்புடனும் நம்பிக்கையுடனும் கூறுகின்றனர்.
+          </span>
+          <span class="en-content">
+            Many marriages and family functions held here have been completed gracefully with divine blessings. Families lovingly share that many couples married here are living with unity, happiness and a peaceful family life.
           </span>
         </p>
       </div>
 
-      <div class="grid-2">
-        <div class="card highlight">
-          <div class="icon">🏛️</div>
-          <h3>
-            <span class="ta-content">மண்டப சிறப்புகள்</span>
-            <span class="en-content">Hall Highlights</span>
-          </h3>
-          <ul>
-            <li><span class="ta-content">முக்கிய மண்டபம்: 250 பேர் இருக்கை வசதி</span><span class="en-content">Main hall seating capacity: 250 guests</span></li>
-            <li><span class="ta-content">உணவகம்: 120 பேர் இருக்கை வசதி</span><span class="en-content">Dining hall seating capacity: 120 guests</span></li>
-            <li><span class="ta-content">விரிவான பஃபே பகுதி</span><span class="en-content">Spacious buffet area</span></li>
-            <li><span class="ta-content">வெளிநிலை மேடை வசதி</span><span class="en-content">Outdoor stage area</span></li>
-          </ul>
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <strong>100+</strong>
+          <span>
+            <span class="ta-content">திருமண விழாக்கள் சிறப்பாக நடைபெற்றுள்ளன</span>
+            <span class="en-content">Marriage functions successfully conducted</span>
+          </span>
         </div>
 
-        <div class="card">
-          <div class="icon">🌸</div>
+        <div class="achievement-card">
+          <strong>200+</strong>
+          <span>
+            <span class="ta-content">நிச்சயதார்த்த விழாக்கள் சிறப்பாக நடைபெற்றுள்ளன</span>
+            <span class="en-content">Engagement functions successfully conducted</span>
+          </span>
+        </div>
+
+        <div class="achievement-card">
+          <strong>200+</strong>
+          <span>
+            <span class="ta-content">சீமந்த விழாக்கள் சிறப்பாக நடைபெற்றுள்ளன</span>
+            <span class="en-content">Seemantham functions successfully conducted</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        <span class="ta-content">மண்டப பதிவுகள் மற்றும் உள்ளூர் மக்கள் தகவலின் அடிப்படையில் குறிப்பிடப்பட்டுள்ளது.</span>
+        <span class="en-content">Mentioned based on mandapam records and local community information.</span>
+      </p>
+
+      <div class="trust-grid">
+        <div class="temple-service-card">
           <h3>
-            <span class="ta-content">ஏன் எங்களை தேர்வு செய்ய வேண்டும்?</span>
-            <span class="en-content">Why Choose Us?</span>
+            <span class="ta-content">ஆலய சேவைக்கான மண்டபம்</span>
+            <span class="en-content">A Mandapam for Temple Service</span>
           </h3>
-          <ul>
-            <li><span class="ta-content">சுத்தமான மற்றும் குடும்பத்திற்கு ஏற்ற சூழல்</span><span class="en-content">Clean and family-friendly environment</span></li>
-            <li><span class="ta-content">தண்ணீர், மின்சாரம் மற்றும் ஜெனரேட்டர் வசதி</span><span class="en-content">Water, electricity, and generator backup</span></li>
-            <li><span class="ta-content">பார்க்கிங் வசதி மற்றும் சுலபமான இடம்</span><span class="en-content">Parking facility and easy location access</span></li>
-            <li><span class="ta-content">முழுநாள் / அரைநாள் முன்பதிவு வசதி</span><span class="en-content">Full-day / half-day booking options</span></li>
-          </ul>
+
+          <p>
+            <span class="ta-content">
+              இந்த மண்டபத்தின் மூலம் நீங்கள் செலுத்தும் ஒவ்வொரு ரூபாயும், அருள்மிகு ஸ்ரீ தர்மராஜா சமேத அருள்மிகு ஸ்ரீ திரௌபதி அம்மன் ஆலயத்தின் திருப்பணிகள், பராமரிப்பு பணிகள், ஆன்மிக சேவைகள் மற்றும் பக்தர்களின் நலனுக்காகவே முழுமையாக பயன்படுத்தப்படும் என்பதை மகிழ்ச்சியுடனும் பெருமையுடனும் தெரிவித்துக் கொள்கிறோம்.
+            </span>
+            <span class="en-content">
+              Every rupee contributed through this mandapam is fully used for the renovation work, maintenance, spiritual services and devotee welfare of Arulmigu Sri Dharmaraja Sametha Arulmigu Sri Draupadi Amman Temple. We share this with happiness and pride.
+            </span>
+          </p>
+        </div>
+
+        <div class="purpose-card">
+          <h3>
+            <span class="ta-content">எங்கள் நோக்கம்</span>
+            <span class="en-content">Our Purpose</span>
+          </h3>
+
+          <p>
+            <span class="ta-content">
+              மக்களின் குடும்ப விழாக்கள் சிறப்பாக நடைபெற வேண்டும் என்பதோடு, ஆலய வளர்ச்சி, ஆன்மிக சேவை மற்றும் பக்தர்களின் நலனுக்காக தொடர்ந்து செயல்படுவது எங்கள் முக்கிய நோக்கமாகும்.
+            </span>
+            <span class="en-content">
+              Our main purpose is to help families celebrate their functions beautifully while continuously supporting temple growth, spiritual service and the welfare of devotees.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="trust-points">
+        <div class="trust-point">
+          ✅ <span class="ta-content">ஆலய திருப்பணிகளுக்கு ஆதரவாக செயல்படும் மண்டபம்</span>
+          <span class="en-content">Supports temple renovation and service activities</span>
+        </div>
+
+        <div class="trust-point">
+          ✅ <span class="ta-content">அமைதியான மற்றும் ஆன்மிக சூழல்</span>
+          <span class="en-content">Peaceful and spiritual environment</span>
+        </div>
+
+        <div class="trust-point">
+          ✅ <span class="ta-content">குடும்ப விழாக்களுக்கு மக்கள் நம்பிக்கையுடன் தேர்வு செய்யும் இடம்</span>
+          <span class="en-content">A trusted place for family functions</span>
+        </div>
+      </div>
+
+      <div class="trust-final-line">
+        <span class="ta-content">
+          இறை அருள், மக்களின் நம்பிக்கை, ஆன்மிக சூழல் — இவை அனைத்தும் ஒன்றிணைந்த புனிதமான இடம் அருள்மிகு அம்மன் திருமண மண்டபம்.
+        </span>
+        <span class="en-content">
+          Divine blessings, people’s trust and a spiritual atmosphere come together at Arulmigu Amman Thirumana Mandapam.
+        </span>
+      </div>
+    </section>
+
+    <section id="temple">
+      <div class="temple-section-box">
+        <div class="section-title">
+          <span class="kicker">
+            <span class="ta-content">ஆலயம்</span>
+            <span class="en-content">Temple</span>
+          </span>
+
+          <h2 class="temple-title">
+            <span class="ta-content">அருள்மிகு ஸ்ரீ தர்மராஜா சமேத அருள்மிகு ஸ்ரீ திரௌபதி அம்மன் ஆலயம்</span>
+            <span class="en-content">Arulmigu Sri Dharmaraja Sametha Arulmigu Sri Draupadi Amman Temple</span>
+          </h2>
+
+          <p>
+            <span class="ta-content">
+              1890 ஆம் ஆண்டு மகா கும்பாபிஷேகத்துடன் நிறுவப்பட்ட புனித ஆலயம். 135 ஆண்டுகளுக்கும் மேலாக பக்தர்களின் நம்பிக்கை, பிரார்த்தனை மற்றும் ஆன்மிக சேவையின் மையமாக விளங்கி வருகிறது.
+            </span>
+            <span class="en-content">
+              This holy temple was established with Maha Kumbhabhishekam in 1890 and has remained a centre of faith, prayer and spiritual service for more than 135 years.
+            </span>
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="temple-highlight">
+            <h3>
+              <span class="ta-content">ஆலய சிறப்புகள்</span>
+              <span class="en-content">Temple Highlights</span>
+            </h3>
+
+            <ul>
+              <li><span class="ta-content">1890 ஆம் ஆண்டு நிறுவப்பட்ட புனித ஆலயம்</span><span class="en-content">Holy temple established in 1890</span></li>
+              <li><span class="ta-content">135+ ஆண்டுகள் ஆன்மிக வரலாறு</span><span class="en-content">135+ years of spiritual history</span></li>
+              <li><span class="ta-content">13.06.2022 அன்று திருப்பணிகள் செய்யப்பட்டு மகா கும்பாபிஷேகம் நடைபெற்றது</span><span class="en-content">Renovation and Maha Kumbhabhishekam performed on 13.06.2022</span></li>
+              <li><span class="ta-content">புதூர் மக்கள் மற்றும் பெங்களூரில் வாழும் புதூர் உறவினர்களின் பக்தி மற்றும் ஒற்றுமையால் பராமரிப்பு நடைபெறுகிறது</span><span class="en-content">Maintained with devotion and unity by Pudur villagers and relatives living in Bengaluru</span></li>
+            </ul>
+          </div>
+
+          <div class="temple-highlight">
+            <h3>
+              <span class="ta-content">மூலஸ்தான தெய்வங்கள்</span>
+              <span class="en-content">Main Deities</span>
+            </h3>
+
+            <ul>
+              <li><span class="ta-content">ஸ்ரீ தர்மராஜா</span><span class="en-content">Sri Dharmaraja</span></li>
+              <li><span class="ta-content">ஸ்ரீ விநாயகர்</span><span class="en-content">Sri Vinayagar</span></li>
+              <li><span class="ta-content">ஸ்ரீ அர்ஜுனர்</span><span class="en-content">Sri Arjuna</span></li>
+              <li><span class="ta-content">ஸ்ரீ திரௌபதி அம்மன்</span><span class="en-content">Sri Draupadi Amman</span></li>
+              <li><span class="ta-content">ஸ்ரீ கிருஷ்ணர்</span><span class="en-content">Sri Krishna</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote-box">
+          <p>“Yato Dharmas Tato Jaya”</p>
+          <p>
+            <span class="ta-content">தர்மம் இருக்கும் இடத்தில் வெற்றி இருக்கும்.</span>
+            <span class="en-content">Where there is dharma, there is victory.</span>
+          </p>
+          <p style="margin-top:10px;">“Dharmo Rakshati Rakshitah”</p>
+          <p>
+            <span class="ta-content">தர்மத்தை காப்பவரை தர்மம் காக்கும்.</span>
+            <span class="en-content">Dharma protects those who protect it.</span>
+          </p>
+        </div>
+
+        <div class="button-row" style="margin-top:24px;">
+          <a class="btn btn-red"
+             href="https://maps.app.goo.gl/YnaLi5uPnVDUwewQA"
+             target="_blank"
+             rel="noopener noreferrer">🛕 Open Temple Location</a>
+
+          <a class="btn btn-gold"
+             href="#booking">📞 Book Mandapam / Rooms</a>
         </div>
       </div>
     </section>
@@ -895,8 +1233,8 @@
 
         <div class="card blue-bg">
           <div class="icon">🛏️</div>
-          <h3><span class="ta-content">அறைகள்</span><span class="en-content">Guest Rooms</span></h3>
-          <p><span class="ta-content">குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக 5 நன்கு பராமரிக்கப்பட்ட அறைகள்.</span><span class="en-content">5 well-maintained rooms for family members and guests.</span></p>
+          <h3><span class="ta-content">அறைகள் மற்றும் அறை முன்பதிவு</span><span class="en-content">Rooms and Room Booking</span></h3>
+          <p><span class="ta-content">குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக 5 நன்கு பராமரிக்கப்பட்ட அறைகள் உள்ளன. அறை முன்பதிவும் செய்யலாம்.</span><span class="en-content">5 well-maintained rooms are available for family members and guests. Room booking is also available.</span></p>
         </div>
 
         <div class="card purple-bg">
@@ -905,7 +1243,7 @@
           <p><span class="ta-content">ஆண்கள் மற்றும் பெண்களுக்கு தனித்தனியான சுத்தமான கழிப்பறைகள்.</span><span class="en-content">Separate clean restroom facilities for men and women.</span></p>
         </div>
 
-        <div class="card">
+        <div class="card orange-bg">
           <div class="icon">💄</div>
           <h3><span class="ta-content">டிரெசிங் ரூம்</span><span class="en-content">Dressing Room</span></h3>
           <p><span class="ta-content">மணமக்கள் மற்றும் குடும்பத்தினருக்கான தனி மேக்கப் / மாற்று அறை வசதி.</span><span class="en-content">Separate dressing and makeup room facility.</span></p>
@@ -945,15 +1283,15 @@
         </div>
 
         <div class="card">
-          <div class="icon">🎂</div>
-          <h3><span class="ta-content">பிறந்தநாள் விழா</span><span class="en-content">Birthday Function</span></h3>
-          <p><span class="ta-content">குடும்ப பிறந்தநாள் விழாக்களுக்கு ஏற்ற இடம்.</span><span class="en-content">Suitable for birthday parties and family gatherings.</span></p>
+          <div class="icon">👶</div>
+          <h3><span class="ta-content">சீமந்தம்</span><span class="en-content">Seemantham</span></h3>
+          <p><span class="ta-content">சீமந்தம் மற்றும் குடும்ப ஆசீர்வாத நிகழ்வுகளுக்கு அமைதியான சூழல்.</span><span class="en-content">A peaceful setting for seemantham and family blessing functions.</span></p>
         </div>
 
         <div class="card">
-          <div class="icon">🎭</div>
-          <h3><span class="ta-content">கலாச்சார நிகழ்ச்சி</span><span class="en-content">Cultural Event</span></h3>
-          <p><span class="ta-content">வெளிநிலை மேடை மற்றும் திறந்த பகுதி வசதி உள்ளது.</span><span class="en-content">Outdoor stage and open area support cultural programs.</span></p>
+          <div class="icon">🛏️</div>
+          <h3><span class="ta-content">அறை முன்பதிவு</span><span class="en-content">Room Booking</span></h3>
+          <p><span class="ta-content">விருந்தினர்கள் மற்றும் குடும்பத்தினருக்கான அறைகள் முன்பதிவு செய்யலாம்.</span><span class="en-content">Rooms can be booked for guests and family members.</span></p>
         </div>
 
         <div class="card highlight">
@@ -971,8 +1309,8 @@
           <span class="en-content">Booking Process</span>
         </span>
         <h2>
-          <span class="ta-content">எளிய 5 படி முன்பதிவு முறை</span>
-          <span class="en-content">Simple 5-Step Booking Process</span>
+          <span class="ta-content">மண்டபம் மற்றும் அறை முன்பதிவு முறை</span>
+          <span class="en-content">Hall and Room Booking Process</span>
         </h2>
       </div>
 
@@ -985,17 +1323,17 @@
 
           <div class="step">
             <h3><span class="ta-content">அழைக்கவும்</span><span class="en-content">Call Us</span></h3>
-            <p><span class="ta-content">முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Call 9751672314 for booking details.</span></p>
+            <p><span class="ta-content">மண்டபம் மற்றும் அறை முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Call 9751672314 for hall and room booking details.</span></p>
           </div>
 
           <div class="step">
-            <h3><span class="ta-content">மண்டபத்தை பார்வையிடவும்</span><span class="en-content">Visit the Mandapam</span></h3>
-            <p><span class="ta-content">வசதிகள் மற்றும் இடத்தை நேரில் பார்த்து உறுதி செய்யவும்.</span><span class="en-content">Visit the hall and check the facilities personally.</span></p>
+            <h3><span class="ta-content">மண்டபம் / அறைகள் பார்வையிடவும்</span><span class="en-content">Visit Hall / Rooms</span></h3>
+            <p><span class="ta-content">வசதிகள், அறைகள் மற்றும் இடத்தை நேரில் பார்த்து உறுதி செய்யவும்.</span><span class="en-content">Visit the hall and rooms to check the facilities personally.</span></p>
           </div>
 
           <div class="step">
             <h3><span class="ta-content">முன்பதிவை உறுதி செய்யவும்</span><span class="en-content">Confirm the Booking</span></h3>
-            <p><span class="ta-content">தேதி, நேரம், நிகழ்ச்சி வகை ஆகியவற்றை உறுதி செய்யவும்.</span><span class="en-content">Confirm the date, time, and event type.</span></p>
+            <p><span class="ta-content">தேதி, நேரம், நிகழ்ச்சி வகை மற்றும் அறை தேவையை உறுதி செய்யவும்.</span><span class="en-content">Confirm date, time, event type and room requirement.</span></p>
           </div>
 
           <div class="step">
@@ -1007,25 +1345,25 @@
         <div class="payment-box">
           <h3>💳 GPay Available</h3>
           <p>
-            <span class="ta-content">GPay எண்: <strong>9751672314</strong></span>
-            <span class="en-content">GPay Number: <strong>9751672314</strong></span>
+            <span class="ta-content">GPay எண்: <strong>9159299878</strong></span>
+            <span class="en-content">GPay Number: <strong>9159299878</strong></span>
           </p>
 
           <p>
-            <span class="ta-content">இந்த இணையதளத்தில் ஆன்லைன் payment வசதி இல்லை. முன்பதிவு மற்றும் கட்டண விவரங்களுக்கு நேரடியாக அழைக்கவும்.</span>
-            <span class="en-content">This website does not collect online payments. Please call directly for booking and payment details.</span>
+            <span class="ta-content">இந்த இணையதளத்தில் ஆன்லைன் payment வசதி இல்லை. மண்டபம், அறை முன்பதிவு மற்றும் கட்டண விவரங்களுக்கு நேரடியாக அழைக்கவும்.</span>
+            <span class="en-content">This website does not collect online payments. Please call directly for hall, room booking and payment details.</span>
           </p>
 
           <div class="safety-note">
-            <span class="ta-content">⚠️ பணம் செலுத்துவதற்கு முன் தொலைபேசியில் முன்பதிவை உறுதிப்படுத்தவும்.</span>
-            <span class="en-content">⚠️ Please confirm booking by phone before making any payment.</span>
+            <span class="ta-content">⚠️ பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span>
+            <span class="en-content">⚠️ Please confirm booking by calling 9751672314 before making any payment.</span>
           </div>
 
           <div class="button-row" style="justify-content:flex-start; margin-top:22px;">
             <a class="btn btn-light" href="tel:9751672314">📞 Call Before Payment</a>
 
             <a class="btn btn-gold"
-               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20confirm%20booking%20and%20GPay%20details%20for%20Arulmigu%20Amman%20Thirumana%20Mandapam."
+               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20confirm%20mandapam%20booking%2C%20room%20booking%20and%20GPay%20details."
                target="_blank"
                rel="noopener noreferrer">💬 Confirm on WhatsApp</a>
           </div>
@@ -1052,11 +1390,16 @@
       <div class="calendar-box">
         <div class="calendar-note">
           <span class="ta-content">
-            காலியாக இருக்கும் தேதிகளுக்கு முன்பதிவு செய்ய அழைக்கவும்: 9751672314. வாடிக்கையாளர் பெயர் அல்லது தனிப்பட்ட தகவலை public calendar-ல் சேர்க்க வேண்டாம்.
+            காலியாக இருக்கும் தேதிகளுக்கு மண்டபம் மற்றும் அறை முன்பதிவு செய்ய அழைக்கவும்: 9751672314.
           </span>
           <span class="en-content">
-            For available dates, please call: 9751672314. Do not add customer names or private details in the public calendar.
+            For available dates, hall booking and room booking, please call: 9751672314.
           </span>
+        </div>
+
+        <div class="privacy-note">
+          <span class="ta-content">வாடிக்கையாளர் பெயர் மற்றும் தனிப்பட்ட தகவல்கள் public calendar-ல் காட்டப்படாது.</span>
+          <span class="en-content">Customer names and personal details will not be shown publicly in the calendar.</span>
         </div>
 
         <div class="legend">
@@ -1091,8 +1434,8 @@
         </p>
 
         <p class="last-updated">
-          <span class="ta-content">தேதி கிடைக்கும் நிலை மாறலாம். முன்பதிவு செய்வதற்கு முன் தொலைபேசியில் உறுதி செய்யவும்.</span>
-          <span class="en-content">Date availability may change. Please confirm by phone before booking.</span>
+          <span class="ta-content">கடைசியாக புதுப்பிக்கப்பட்டது: மே 2026. முன்பதிவுக்கு முன் தொலைபேசியில் உறுதி செய்யவும்.</span>
+          <span class="en-content">Last updated: May 2026. Please confirm by phone before booking.</span>
         </p>
 
         <div class="button-row" style="margin-top:18px;">
@@ -1101,7 +1444,7 @@
              target="_blank"
              rel="noopener noreferrer">📅 Open Full Calendar</a>
 
-          <a class="btn btn-red" href="tel:9751672314">📞 Book Available Date</a>
+          <a class="btn btn-red" href="tel:9751672314">📞 Book Hall / Rooms</a>
         </div>
       </div>
     </section>
@@ -1124,7 +1467,9 @@
           <strong>Thirumana Mandapam in Thiruvallur</strong> •
           <strong>Marriage hall near Pudur</strong> •
           <strong>Mandapam booking R.K. Pet</strong> •
+          <strong>Room booking near R.K. Pet</strong> •
           <strong>Wedding hall Thiruvallur</strong> •
+          <strong>Seemantham hall near R.K. Pet</strong> •
           <strong>புதூர் திருமண மண்டபம்</strong> •
           <strong>ஆர்.கே.பேட்டை மண்டபம்</strong>
         </p>
@@ -1155,6 +1500,11 @@
         </details>
 
         <details>
+          <summary><span class="ta-content">அறை முன்பதிவு செய்யலாமா?</span><span class="en-content">Can we book rooms?</span></summary>
+          <p><span class="ta-content">ஆம். குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக அறைகள் உள்ளன. அறை முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Yes. Rooms are available for family members and guests. Please call 9751672314 for room booking details.</span></p>
+        </details>
+
+        <details>
           <summary><span class="ta-content">பார்க்கிங் வசதி உள்ளதா?</span><span class="en-content">Is parking available?</span></summary>
           <p><span class="ta-content">ஆம். இரு சக்கர வாகனங்கள், கார்கள் மற்றும் பேருந்துகளுக்கான பார்க்கிங் வசதி உள்ளது.</span><span class="en-content">Yes. Parking is available for two-wheelers, cars, and buses.</span></p>
         </details>
@@ -1165,18 +1515,13 @@
         </details>
 
         <details>
-          <summary><span class="ta-content">விருந்தினர் அறைகள் உள்ளதா?</span><span class="en-content">Are guest rooms available?</span></summary>
-          <p><span class="ta-content">ஆம். குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக 5 அறைகள் உள்ளன.</span><span class="en-content">Yes. 5 rooms are available for family members and guests.</span></p>
-        </details>
-
-        <details>
           <summary><span class="ta-content">அரைநாள் முன்பதிவு கிடைக்குமா?</span><span class="en-content">Is half-day booking available?</span></summary>
           <p><span class="ta-content">ஆம். முழுநாள் அல்லது அரைநாள் முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Yes. Please call 9751672314 for full-day or half-day booking details.</span></p>
         </details>
 
         <details>
           <summary><span class="ta-content">GPay ஏற்கப்படுமா?</span><span class="en-content">Is GPay accepted?</span></summary>
-          <p><span class="ta-content">ஆம். GPay கிடைக்கும். ஆனால் பணம் செலுத்துவதற்கு முன் தொலைபேசியில் முன்பதிவை உறுதிப்படுத்தவும்.</span><span class="en-content">Yes. GPay is available, but please confirm the booking by phone before making any payment.</span></p>
+          <p><span class="ta-content">ஆம். GPay எண் 9159299878. ஆனால் பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span><span class="en-content">Yes. GPay number is 9159299878, but please confirm the booking by calling 9751672314 before making any payment.</span></p>
         </details>
       </div>
     </section>
@@ -1188,8 +1533,8 @@
           <span class="en-content">Contact</span>
         </span>
         <h2>
-          <span class="ta-content">முன்பதிவுக்கு இப்போது அழைக்கவும்</span>
-          <span class="en-content">Call Now for Booking</span>
+          <span class="ta-content">மண்டபம் / அறை முன்பதிவுக்கு இப்போது அழைக்கவும்</span>
+          <span class="en-content">Call Now for Hall / Room Booking</span>
         </h2>
       </div>
 
@@ -1203,13 +1548,14 @@
           <p>📍 <span class="ta-content">சித்தூர் மெயின் ரோடு, புதூர், ஆர்.கே.பேட்டை தாலுகா, திருவள்ளூர் மாவட்டம்</span><span class="en-content">Chittoor Main Road, Pudur, R.K. Pet Taluk, Thiruvallur District</span></p>
           <p>📞 <a href="tel:9751672314"><strong>9751672314</strong></a></p>
           <p>📧 <a href="mailto:arulmiguammanmandapam1306@gmail.com?subject=Mandapam%20Booking%20Enquiry"><strong>arulmiguammanmandapam1306@gmail.com</strong></a></p>
-          <p>💳 <strong>GPay Available:</strong> 9751672314</p>
+          <p>💳 <strong>GPay:</strong> 9159299878</p>
+          <p>🛏️ <strong><span class="ta-content">அறை முன்பதிவு கிடைக்கும்</span><span class="en-content">Room booking available</span></strong></p>
 
           <div class="button-row" style="justify-content:flex-start; margin-top:20px;">
             <a class="btn btn-light" href="tel:9751672314">📞 Call Now</a>
 
             <a class="btn btn-green"
-               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20date%20availability%20for%20Arulmigu%20Amman%20Thirumana%20Mandapam.%20%E0%AE%A4%E0%AF%87%E0%AE%A4%E0%AE%BF%20%E0%AE%95%E0%AE%BF%E0%AE%9F%E0%AF%88%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%AE%E0%AE%BE%20%E0%AE%8E%E0%AE%A9%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E0%AE%A4%E0%AF%86%E0%AE%B0%E0%AE%BF%E0%AE%AF%20%E0%AE%B5%E0%AF%87%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%8D."
+               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability."
                target="_blank"
                rel="noopener noreferrer">💬 WhatsApp</a>
 
@@ -1219,18 +1565,22 @@
 
         <div class="map-card">
           <h3>
-            <span class="ta-content">இடம் மற்றும் மதிப்புரை</span>
-            <span class="en-content">Location and Review</span>
+            <span class="ta-content">இடம் மற்றும் ஆலயம்</span>
+            <span class="en-content">Location and Temple</span>
           </h3>
 
           <div class="button-row" style="justify-content:flex-start;">
             <a class="btn btn-gold"
                href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7"
                target="_blank"
-               rel="noopener noreferrer">📍 Open Google Maps</a>
+               rel="noopener noreferrer">📍 Mandapam Location</a>
 
-            <!-- Replace this href with direct Google Review link from Google Business Profile when available -->
             <a class="btn btn-red"
+               href="https://maps.app.goo.gl/YnaLi5uPnVDUwewQA"
+               target="_blank"
+               rel="noopener noreferrer">🛕 Temple Location</a>
+
+            <a class="btn btn-green"
                href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7"
                target="_blank"
                rel="noopener noreferrer">⭐ Review us on Google</a>
@@ -1256,7 +1606,7 @@
     <a class="float-btn call-float" href="tel:9751672314" title="Call">☎</a>
 
     <a class="float-btn whatsapp-float"
-       href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20date%20availability%20for%20Arulmigu%20Amman%20Thirumana%20Mandapam.%20%E0%AE%A4%E0%AF%87%E0%AE%A4%E0%AE%BF%20%E0%AE%95%E0%AE%BF%E0%AE%9F%E0%AF%88%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%AE%E0%AE%BE%20%E0%AE%8E%E0%AE%A9%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E0%AE%A4%E0%AF%86%E0%AE%B0%E0%AE%BF%E0%AE%AF%20%E0%AE%B5%E0%AF%87%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%8D."
+       href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability."
        target="_blank"
        rel="noopener noreferrer"
        title="WhatsApp">💬</a>
@@ -1270,12 +1620,13 @@
 
     <p style="margin-top:8px;">
       <a href="tel:9751672314">Booking: 9751672314</a> |
-      <a href="mailto:arulmiguammanmandapam1306@gmail.com?subject=Mandapam%20Booking%20Enquiry">arulmiguammanmandapam1306@gmail.com</a>
+      <a href="mailto:arulmiguammanmandapam1306@gmail.com?subject=Mandapam%20Booking%20Enquiry">arulmiguammanmandapam1306@gmail.com</a> |
+      GPay: 9159299878
     </p>
 
     <p style="margin-top:8px;">
-      <span class="ta-content">இந்த இணையதளத்தில் online payment வசதி இல்லை. முன்பதிவுக்கு நேரடியாக அழைக்கவும்.</span>
-      <span class="en-content">No online payment is collected on this website. Please call directly for booking.</span>
+      <span class="ta-content">இந்த இணையதளத்தில் online payment வசதி இல்லை. மண்டபம் மற்றும் அறை முன்பதிவுக்கு நேரடியாக அழைக்கவும்.</span>
+      <span class="en-content">No online payment is collected on this website. Please call directly for hall and room booking.</span>
     </p>
   </footer>
 
