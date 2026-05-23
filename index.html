@@ -7,12 +7,16 @@
   <title>Arulmigu Amman Thirumana Mandapam | அருள்மிகு அம்மன் திருமண மண்டபம்</title>
 
   <meta name="description" content="Arulmigu Amman Thirumana Mandapam, Pudur, R.K. Pet, Thiruvallur. Marriage, engagement, seemantham, family function and room booking available. Temple pooja booking, date availability, WhatsApp booking, Google Maps and GPay option available." />
-
   <meta name="keywords" content="Arulmigu Amman Thirumana Mandapam, Marriage hall in R.K. Pet, Thirumana Mandapam in Thiruvallur, Mandapam booking R.K. Pet, Room booking R.K. Pet, Draupadi Amman Temple, Pooja booking, திருமண மண்டபம், புதூர் திருமண மண்டபம், திரௌபதி அம்மன் ஆலயம்" />
-
   <meta name="author" content="Arulmigu Amman Thirumana Mandapam" />
   <meta name="robots" content="index, follow" />
 
+  <meta property="og:title" content="Arulmigu Amman Thirumana Mandapam" />
+  <meta property="og:description" content="Marriage hall, room booking, temple pooja booking and date availability in Pudur, R.K. Pet, Thiruvallur." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ta_IN" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='75'%3E🛕%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -49,6 +53,7 @@
       --secondary: #f97316;
       --gold: #facc15;
       --green: #15803d;
+      --blue: #0284c7;
       --dark: #2f1b0c;
       --muted: #6b5b4b;
       --white: #ffffff;
@@ -91,6 +96,43 @@
 
     body.english .en-content {
       display: inline;
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--secondary));
+      color: white;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-box {
+      padding: 30px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .loader-icon {
+      font-size: 52px;
+      display: block;
+      margin-bottom: 10px;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.12); opacity: 0.82; }
     }
 
     .top-bar {
@@ -260,6 +302,11 @@
       color: white;
     }
 
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
     .btn-outline {
       background: transparent;
       color: white;
@@ -299,9 +346,28 @@
       font-weight: 600;
     }
 
+    .live-status {
+      max-width: 1120px;
+      margin: -32px auto 22px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 6;
+    }
+
+    .live-status-inner {
+      background: linear-gradient(135deg, #dcfce7, #fef9c3);
+      border-left: 8px solid var(--green);
+      color: var(--dark);
+      padding: 18px 22px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      font-weight: 900;
+      text-align: center;
+    }
+
     .stats {
       max-width: 1120px;
-      margin: -42px auto 0;
+      margin: 0 auto;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -595,6 +661,35 @@
       font-weight: 800;
     }
 
+    .gallery-card {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(250,204,21,0.25), transparent 40%),
+        linear-gradient(135deg, #fff7ed, #fff1f2);
+      border: 2px dashed rgba(185,28,28,0.35);
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 24px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border-top: 6px solid var(--gold);
+    }
+
+    .testimonial-card p {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: #ca8a04;
+      font-weight: 900;
+    }
+
     .calendar-box {
       background: white;
       border-radius: var(--radius);
@@ -823,10 +918,75 @@
       font-size: 24px;
       box-shadow: var(--shadow);
       font-weight: bold;
+      border: none;
+      cursor: pointer;
     }
 
     .call-float { background: var(--primary); }
     .whatsapp-float { background: #16a34a; }
+    .gpay-float { background: #2563eb; }
+
+    .gpay-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(0,0,0,0.55);
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .gpay-modal.show {
+      display: grid;
+    }
+
+    .gpay-card {
+      max-width: 430px;
+      width: 100%;
+      background: white;
+      border-radius: 26px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .gpay-card h3 {
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .gpay-number {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--green);
+      margin: 12px 0;
+    }
+
+    .qr-placeholder {
+      margin: 18px auto;
+      width: 170px;
+      height: 170px;
+      border-radius: 20px;
+      border: 3px dashed var(--blue);
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      color: var(--blue);
+      font-weight: 900;
+      background: #eff6ff;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @media (max-width: 980px) {
       .grid,
@@ -851,10 +1011,6 @@
 
       .hero {
         min-height: auto;
-      }
-
-      .stats {
-        margin-top: 22px;
       }
 
       .trust-banner {
@@ -915,6 +1071,20 @@
 </head>
 
 <body>
+  <div id="loader">
+    <div class="loader-box">
+      <span class="loader-icon">🛕</span>
+      <h2>
+        <span class="ta-content">அருள்மிகு அம்மன் திருமண மண்டபம்</span>
+        <span class="en-content">Arulmigu Amman Thirumana Mandapam</span>
+      </h2>
+      <p>
+        <span class="ta-content">தகவல்கள் ஏற்றப்படுகிறது...</span>
+        <span class="en-content">Loading...</span>
+      </p>
+    </div>
+  </div>
+
   <div class="top-bar">
     📞 <span class="ta-content">மண்டபம் / அறை முன்பதிவு</span><span class="en-content">Hall / Room Booking</span>:
     <a href="tel:9751672314">9751672314</a>
@@ -938,11 +1108,10 @@
         <a href="#trust"><span class="ta-content">நம்பிக்கை</span><span class="en-content">Trust</span></a>
         <a href="#temple"><span class="ta-content">ஆலயம்</span><span class="en-content">Temple</span></a>
         <a href="#pooja"><span class="ta-content">பூஜை</span><span class="en-content">Pooja</span></a>
+        <a href="#why"><span class="ta-content">ஏன் எங்கள் மண்டபம்?</span><span class="en-content">Why Us</span></a>
         <a href="#facilities"><span class="ta-content">வசதிகள்</span><span class="en-content">Facilities</span></a>
-        <a href="#events"><span class="ta-content">நிகழ்வுகள்</span><span class="en-content">Events</span></a>
         <a href="#booking"><span class="ta-content">முன்பதிவு</span><span class="en-content">Booking</span></a>
         <a href="#availability"><span class="ta-content">தேதி</span><span class="en-content">Dates</span></a>
-        <a href="#faq"><span class="ta-content">கேள்விகள்</span><span class="en-content">FAQ</span></a>
         <a href="#contact"><span class="ta-content">தொடர்பு</span><span class="en-content">Contact</span></a>
       </div>
     </nav>
@@ -990,7 +1159,14 @@
       </div>
     </section>
 
-    <div class="stats">
+    <div class="live-status fade-up">
+      <div class="live-status-inner">
+        <span class="ta-content">🟢 இன்றைய நிலை: தேதி கிடைக்கும் நிலையை உறுதி செய்ய அழைக்கவும் — 9751672314</span>
+        <span class="en-content">🟢 Today Status: Please call 9751672314 to confirm date availability</span>
+      </div>
+    </div>
+
+    <div class="stats fade-up">
       <div class="stat-card">
         <strong>250</strong>
         <span><span class="ta-content">முக்கிய மண்டப இருக்கைகள்</span><span class="en-content">Main Hall Seats</span></span>
@@ -1012,7 +1188,7 @@
       </div>
     </div>
 
-    <section class="trust-section" id="trust">
+    <section class="trust-section fade-up" id="trust">
       <div class="trust-banner">
         <h2>
           <span class="ta-content">அருள்மிகு அம்மன் திருமண மண்டபம்</span>
@@ -1091,7 +1267,7 @@
       </div>
     </section>
 
-    <section id="temple">
+    <section id="temple" class="fade-up">
       <div class="temple-section-box">
         <div class="section-title">
           <span class="kicker">
@@ -1241,7 +1417,84 @@
       </div>
     </section>
 
-    <section id="facilities">
+    <section id="why" class="fade-up">
+      <div class="section-title">
+        <span class="kicker">
+          <span class="ta-content">ஏன் எங்கள் மண்டபம்?</span>
+          <span class="en-content">Why Choose Us?</span>
+        </span>
+        <h2>
+          <span class="ta-content">குடும்ப விழாக்களுக்கு நம்பிக்கையான தேர்வு</span>
+          <span class="en-content">A Trusted Choice for Family Functions</span>
+        </h2>
+      </div>
+
+      <div class="grid">
+        <div class="card green-bg">
+          <div class="icon">🛕</div>
+          <h3><span class="ta-content">ஆன்மிக சூழல்</span><span class="en-content">Spiritual Atmosphere</span></h3>
+          <p><span class="ta-content">ஆலய சேவையுடன் இணைந்த அமைதியான இடம்.</span><span class="en-content">A peaceful venue connected with temple service.</span></p>
+        </div>
+
+        <div class="card yellow-bg">
+          <div class="icon">🛏️</div>
+          <h3><span class="ta-content">அறை வசதி</span><span class="en-content">Room Facility</span></h3>
+          <p><span class="ta-content">விருந்தினர்கள் மற்றும் குடும்பத்தினருக்கான அறை முன்பதிவு கிடைக்கும்.</span><span class="en-content">Room booking is available for guests and family members.</span></p>
+        </div>
+
+        <div class="card blue-bg">
+          <div class="icon">📅</div>
+          <h3><span class="ta-content">திறந்த தேதி தகவல்</span><span class="en-content">Open Date Availability</span></h3>
+          <p><span class="ta-content">Google Calendar மூலம் தேதி கிடைக்கும் நிலையை பார்க்கலாம்.</span><span class="en-content">Booking status can be viewed through Google Calendar.</span></p>
+        </div>
+
+        <div class="card red-bg">
+          <div class="icon">🚗</div>
+          <h3><span class="ta-content">பார்க்கிங்</span><span class="en-content">Parking</span></h3>
+          <p><span class="ta-content">கார்கள், இருசக்கர வாகனங்கள் மற்றும் பேருந்துகளுக்கான வசதி.</span><span class="en-content">Parking support for bikes, cars and buses.</span></p>
+        </div>
+
+        <div class="card purple-bg">
+          <div class="icon">💧</div>
+          <h3><span class="ta-content">தண்ணீர் & மின்சாரம்</span><span class="en-content">Water & Power</span></h3>
+          <p><span class="ta-content">தண்ணீர் வசதி மற்றும் ஜெனரேட்டர் வசதி உள்ளது.</span><span class="en-content">Water facility and generator backup are available.</span></p>
+        </div>
+
+        <div class="card orange-bg">
+          <div class="icon">💬</div>
+          <h3><span class="ta-content">எளிய முன்பதிவு</span><span class="en-content">Easy Booking</span></h3>
+          <p><span class="ta-content">Call / WhatsApp மூலம் விரைவாக முன்பதிவு விவரம் பெறலாம்.</span><span class="en-content">Booking details are available quickly through call or WhatsApp.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="fade-up">
+      <div class="section-title">
+        <span class="kicker">
+          <span class="ta-content">புகைப்படங்கள்</span>
+          <span class="en-content">Gallery</span>
+        </span>
+        <h2>
+          <span class="ta-content">மண்டப புகைப்படங்கள் விரைவில் சேர்க்கப்படும்</span>
+          <span class="en-content">Mandapam Photos Will Be Added Soon</span>
+        </h2>
+        <p>
+          <span class="ta-content">பின்னர் front view, stage, dining hall, rooms, parking, temple photos சேர்க்கலாம்.</span>
+          <span class="en-content">Later, you can add front view, stage, dining hall, rooms, parking and temple photos.</span>
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card gallery-card">🏛️ <br><strong><span class="ta-content">மண்டப முன்புறம்</span><span class="en-content">Front View</span></strong></div>
+        <div class="card gallery-card">💍 <br><strong><span class="ta-content">மேடை அலங்காரம்</span><span class="en-content">Stage Decoration</span></strong></div>
+        <div class="card gallery-card">🍽️ <br><strong><span class="ta-content">உணவகம்</span><span class="en-content">Dining Hall</span></strong></div>
+        <div class="card gallery-card">🛏️ <br><strong><span class="ta-content">அறைகள்</span><span class="en-content">Rooms</span></strong></div>
+        <div class="card gallery-card">🚗 <br><strong><span class="ta-content">பார்க்கிங்</span><span class="en-content">Parking</span></strong></div>
+        <div class="card gallery-card">🛕 <br><strong><span class="ta-content">ஆலயம்</span><span class="en-content">Temple</span></strong></div>
+      </div>
+    </section>
+
+    <section id="facilities" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">வசதிகள்</span>
@@ -1296,7 +1549,7 @@
       </div>
     </section>
 
-    <section id="events">
+    <section id="events" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">நிகழ்வுகள்</span>
@@ -1309,45 +1562,16 @@
       </div>
 
       <div class="grid">
-        <div class="card">
-          <div class="icon">💍</div>
-          <h3><span class="ta-content">திருமணம்</span><span class="en-content">Marriage</span></h3>
-          <p><span class="ta-content">குடும்பத்துடன் அழகான திருமண விழா நடத்த ஏற்ற இடம்.</span><span class="en-content">Suitable for family wedding celebrations.</span></p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🌺</div>
-          <h3><span class="ta-content">வரவேற்பு</span><span class="en-content">Reception</span></h3>
-          <p><span class="ta-content">வரவேற்பு நிகழ்ச்சிகளுக்கு வசதியான மண்டப அமைப்பு.</span><span class="en-content">Comfortable hall arrangement for reception events.</span></p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🤝</div>
-          <h3><span class="ta-content">நிச்சயதார்த்தம்</span><span class="en-content">Engagement</span></h3>
-          <p><span class="ta-content">சிறிய மற்றும் நடுத்தர குடும்ப நிகழ்வுகளுக்கு ஏற்றது.</span><span class="en-content">Ideal for small and medium family functions.</span></p>
-        </div>
-
-        <div class="card">
-          <div class="icon">👶</div>
-          <h3><span class="ta-content">சீமந்தம்</span><span class="en-content">Seemantham</span></h3>
-          <p><span class="ta-content">சீமந்தம் மற்றும் குடும்ப ஆசீர்வாத நிகழ்வுகளுக்கு அமைதியான சூழல்.</span><span class="en-content">A peaceful setting for seemantham and family blessing functions.</span></p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🛏️</div>
-          <h3><span class="ta-content">அறை முன்பதிவு</span><span class="en-content">Room Booking</span></h3>
-          <p><span class="ta-content">விருந்தினர்கள் மற்றும் குடும்பத்தினருக்கான அறைகள் முன்பதிவு செய்யலாம்.</span><span class="en-content">Rooms can be booked for guests and family members.</span></p>
-        </div>
-
-        <div class="card highlight">
-          <div class="icon">🥗</div>
-          <h3><span class="ta-content">சைவ நிகழ்வுகள் மட்டும்</span><span class="en-content">Vegetarian Events Only</span></h3>
-          <p><span class="ta-content">மண்டப விதிமுறைப்படி சைவ நிகழ்வுகளுக்கு மட்டும் முன்பதிவு செய்யலாம்.</span><span class="en-content">As per hall policy, booking is available for vegetarian events only.</span></p>
-        </div>
+        <div class="card"><div class="icon">💍</div><h3><span class="ta-content">திருமணம்</span><span class="en-content">Marriage</span></h3><p><span class="ta-content">குடும்பத்துடன் அழகான திருமண விழா நடத்த ஏற்ற இடம்.</span><span class="en-content">Suitable for family wedding celebrations.</span></p></div>
+        <div class="card"><div class="icon">🌺</div><h3><span class="ta-content">வரவேற்பு</span><span class="en-content">Reception</span></h3><p><span class="ta-content">வரவேற்பு நிகழ்ச்சிகளுக்கு வசதியான மண்டப அமைப்பு.</span><span class="en-content">Comfortable hall arrangement for reception events.</span></p></div>
+        <div class="card"><div class="icon">🤝</div><h3><span class="ta-content">நிச்சயதார்த்தம்</span><span class="en-content">Engagement</span></h3><p><span class="ta-content">சிறிய மற்றும் நடுத்தர குடும்ப நிகழ்வுகளுக்கு ஏற்றது.</span><span class="en-content">Ideal for small and medium family functions.</span></p></div>
+        <div class="card"><div class="icon">👶</div><h3><span class="ta-content">சீமந்தம்</span><span class="en-content">Seemantham</span></h3><p><span class="ta-content">சீமந்தம் மற்றும் குடும்ப ஆசீர்வாத நிகழ்வுகளுக்கு அமைதியான சூழல்.</span><span class="en-content">A peaceful setting for seemantham and family blessing functions.</span></p></div>
+        <div class="card"><div class="icon">🛏️</div><h3><span class="ta-content">அறை முன்பதிவு</span><span class="en-content">Room Booking</span></h3><p><span class="ta-content">விருந்தினர்கள் மற்றும் குடும்பத்தினருக்கான அறைகள் முன்பதிவு செய்யலாம்.</span><span class="en-content">Rooms can be booked for guests and family members.</span></p></div>
+        <div class="card highlight"><div class="icon">🥗</div><h3><span class="ta-content">சைவ நிகழ்வுகள் மட்டும்</span><span class="en-content">Vegetarian Events Only</span></h3><p><span class="ta-content">மண்டப விதிமுறைப்படி சைவ நிகழ்வுகளுக்கு மட்டும் முன்பதிவு செய்யலாம்.</span><span class="en-content">As per hall policy, booking is available for vegetarian events only.</span></p></div>
       </div>
     </section>
 
-    <section id="booking">
+    <section id="booking" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">முன்பதிவு முறை</span>
@@ -1361,62 +1585,27 @@
 
       <div class="grid-2">
         <div class="card booking-steps">
-          <div class="step">
-            <h3><span class="ta-content">தேதி கிடைக்கிறதா பார்க்கவும்</span><span class="en-content">Check Date Availability</span></h3>
-            <p><span class="ta-content">கீழே உள்ள Google Calendar-ல் முன்பதிவு செய்யப்பட்ட தேதிகளை பார்க்கவும்.</span><span class="en-content">Use the Google Calendar below to view booked dates.</span></p>
-          </div>
-
-          <div class="step">
-            <h3><span class="ta-content">அழைக்கவும்</span><span class="en-content">Call Us</span></h3>
-            <p><span class="ta-content">மண்டபம் மற்றும் அறை முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Call 9751672314 for hall and room booking details.</span></p>
-          </div>
-
-          <div class="step">
-            <h3><span class="ta-content">மண்டபம் / அறைகள் பார்வையிடவும்</span><span class="en-content">Visit Hall / Rooms</span></h3>
-            <p><span class="ta-content">வசதிகள், அறைகள் மற்றும் இடத்தை நேரில் பார்த்து உறுதி செய்யவும்.</span><span class="en-content">Visit the hall and rooms to check the facilities personally.</span></p>
-          </div>
-
-          <div class="step">
-            <h3><span class="ta-content">முன்பதிவை உறுதி செய்யவும்</span><span class="en-content">Confirm the Booking</span></h3>
-            <p><span class="ta-content">தேதி, நேரம், நிகழ்ச்சி வகை மற்றும் அறை தேவையை உறுதி செய்யவும்.</span><span class="en-content">Confirm date, time, event type and room requirement.</span></p>
-          </div>
-
-          <div class="step">
-            <h3><span class="ta-content">முன்பணம் செலுத்தவும்</span><span class="en-content">Pay Advance</span></h3>
-            <p><span class="ta-content">தொலைபேசியில் உறுதி செய்த பின் GPay அல்லது நேரடியாக பணம் செலுத்தவும்.</span><span class="en-content">After phone confirmation, pay advance by GPay or directly.</span></p>
-          </div>
+          <div class="step"><h3><span class="ta-content">தேதி கிடைக்கிறதா பார்க்கவும்</span><span class="en-content">Check Date Availability</span></h3><p><span class="ta-content">கீழே உள்ள Google Calendar-ல் முன்பதிவு செய்யப்பட்ட தேதிகளை பார்க்கவும்.</span><span class="en-content">Use the Google Calendar below to view booked dates.</span></p></div>
+          <div class="step"><h3><span class="ta-content">அழைக்கவும்</span><span class="en-content">Call Us</span></h3><p><span class="ta-content">மண்டபம் மற்றும் அறை முன்பதிவு விவரங்களுக்கு 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span><span class="en-content">Call 9751672314 for hall and room booking details.</span></p></div>
+          <div class="step"><h3><span class="ta-content">மண்டபம் / அறைகள் பார்வையிடவும்</span><span class="en-content">Visit Hall / Rooms</span></h3><p><span class="ta-content">வசதிகள், அறைகள் மற்றும் இடத்தை நேரில் பார்த்து உறுதி செய்யவும்.</span><span class="en-content">Visit the hall and rooms to check the facilities personally.</span></p></div>
+          <div class="step"><h3><span class="ta-content">முன்பதிவை உறுதி செய்யவும்</span><span class="en-content">Confirm the Booking</span></h3><p><span class="ta-content">தேதி, நேரம், நிகழ்ச்சி வகை மற்றும் அறை தேவையை உறுதி செய்யவும்.</span><span class="en-content">Confirm date, time, event type and room requirement.</span></p></div>
+          <div class="step"><h3><span class="ta-content">முன்பணம் செலுத்தவும்</span><span class="en-content">Pay Advance</span></h3><p><span class="ta-content">தொலைபேசியில் உறுதி செய்த பின் GPay அல்லது நேரடியாக பணம் செலுத்தவும்.</span><span class="en-content">After phone confirmation, pay advance by GPay or directly.</span></p></div>
         </div>
 
         <div class="payment-box">
           <h3>💳 GPay Available</h3>
-          <p>
-            <span class="ta-content">GPay எண்: <strong>9159299878</strong></span>
-            <span class="en-content">GPay Number: <strong>9159299878</strong></span>
-          </p>
-
-          <p>
-            <span class="ta-content">இந்த இணையதளத்தில் ஆன்லைன் payment வசதி இல்லை. மண்டபம், அறை முன்பதிவு மற்றும் கட்டண விவரங்களுக்கு நேரடியாக அழைக்கவும்.</span>
-            <span class="en-content">This website does not collect online payments. Please call directly for hall, room booking and payment details.</span>
-          </p>
-
-          <div class="safety-note">
-            <span class="ta-content">⚠️ பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span>
-            <span class="en-content">⚠️ Please confirm booking by calling 9751672314 before making any payment.</span>
-          </div>
-
+          <p><span class="ta-content">GPay எண்: <strong>9159299878</strong></span><span class="en-content">GPay Number: <strong>9159299878</strong></span></p>
+          <p><span class="ta-content">இந்த இணையதளத்தில் ஆன்லைன் payment வசதி இல்லை. மண்டபம், அறை முன்பதிவு மற்றும் கட்டண விவரங்களுக்கு நேரடியாக அழைக்கவும்.</span><span class="en-content">This website does not collect online payments. Please call directly for hall, room booking and payment details.</span></p>
+          <div class="safety-note"><span class="ta-content">⚠️ பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span><span class="en-content">⚠️ Please confirm booking by calling 9751672314 before making any payment.</span></div>
           <div class="button-row" style="justify-content:flex-start; margin-top:22px;">
             <a class="btn btn-light" href="tel:9751672314">📞 Call Before Payment</a>
-
-            <a class="btn btn-gold"
-               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20confirm%20mandapam%20booking%2C%20room%20booking%20and%20GPay%20details."
-               target="_blank"
-               rel="noopener noreferrer">💬 Confirm on WhatsApp</a>
+            <button class="btn btn-blue" type="button" onclick="openGPay()">💳 Show GPay</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="availability">
+    <section id="availability" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">தேதி கிடைக்கும் நிலை</span>
@@ -1434,12 +1623,8 @@
 
       <div class="calendar-box">
         <div class="calendar-note">
-          <span class="ta-content">
-            காலியாக இருக்கும் தேதிகளுக்கு மண்டபம் மற்றும் அறை முன்பதிவு செய்ய அழைக்கவும்: 9751672314.
-          </span>
-          <span class="en-content">
-            For available dates, hall booking and room booking, please call: 9751672314.
-          </span>
+          <span class="ta-content">காலியாக இருக்கும் தேதிகளுக்கு மண்டபம் மற்றும் அறை முன்பதிவு செய்ய அழைக்கவும்: 9751672314.</span>
+          <span class="en-content">For available dates, hall booking and room booking, please call: 9751672314.</span>
         </div>
 
         <div class="privacy-note">
@@ -1448,30 +1633,12 @@
         </div>
 
         <div class="legend">
-          <div class="legend-item red-bg">
-            <span class="legend-dot dot-red"></span>
-            <span class="ta-content">சிவப்பு: Booked</span>
-            <span class="en-content">Red: Booked</span>
-          </div>
-
-          <div class="legend-item green-bg">
-            <span class="legend-dot dot-green"></span>
-            <span class="ta-content">பச்சை: Available / Open</span>
-            <span class="en-content">Green: Available / Open</span>
-          </div>
-
-          <div class="legend-item yellow-bg">
-            <span class="legend-dot dot-yellow"></span>
-            <span class="ta-content">மஞ்சள்: Tentative</span>
-            <span class="en-content">Yellow: Tentative</span>
-          </div>
+          <div class="legend-item red-bg"><span class="legend-dot dot-red"></span><span class="ta-content">சிவப்பு: Booked</span><span class="en-content">Red: Booked</span></div>
+          <div class="legend-item green-bg"><span class="legend-dot dot-green"></span><span class="ta-content">பச்சை: Available / Open</span><span class="en-content">Green: Available / Open</span></div>
+          <div class="legend-item yellow-bg"><span class="legend-dot dot-yellow"></span><span class="ta-content">மஞ்சள்: Tentative</span><span class="en-content">Yellow: Tentative</span></div>
         </div>
 
-        <iframe
-          class="calendar"
-          src="https://calendar.google.com/calendar/embed?src=arulmiguammanmandapam1306%40gmail.com&ctz=Asia%2FKolkata"
-          title="Arulmigu Amman Mandapam Booking Dates Calendar">
-        </iframe>
+        <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=arulmiguammanmandapam1306%40gmail.com&ctz=Asia%2FKolkata" title="Arulmigu Amman Mandapam Booking Dates Calendar"></iframe>
 
         <p class="calendar-warning">
           <span class="ta-content">Calendar தெரியவில்லை என்றால், தேதி கிடைக்கும் நிலையை அறிய 9751672314 என்ற எண்ணுக்கு அழைக்கவும்.</span>
@@ -1484,17 +1651,51 @@
         </p>
 
         <div class="button-row" style="margin-top:18px;">
-          <a class="btn btn-gold"
-             href="https://calendar.google.com/calendar/u/0?cid=YXJ1bG1pZ3VhbW1hbm1hbmRhcGFtMTMwNkBnbWFpbC5jb20"
-             target="_blank"
-             rel="noopener noreferrer">📅 Open Full Calendar</a>
-
+          <a class="btn btn-gold" href="https://calendar.google.com/calendar/u/0?cid=YXJ1bG1pZ3VhbW1hbm1hbmRhcGFtMTMwNkBnbWFpbC5jb20" target="_blank" rel="noopener noreferrer">📅 Open Full Calendar</a>
           <a class="btn btn-red" href="tel:9751672314">📞 Book Hall / Rooms</a>
         </div>
       </div>
     </section>
 
-    <section id="faq">
+    <section id="testimonials" class="fade-up">
+      <div class="section-title">
+        <span class="kicker">
+          <span class="ta-content">மதிப்புரைகள்</span>
+          <span class="en-content">Testimonials</span>
+        </span>
+        <h2>
+          <span class="ta-content">மக்களின் நம்பிக்கை</span>
+          <span class="en-content">People’s Trust</span>
+        </h2>
+      </div>
+
+      <div class="grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p><span class="ta-content">“அமைதியான ஆன்மிக சூழல் கொண்ட அருமையான மண்டபம்.”</span><span class="en-content">“A wonderful mandapam with a peaceful spiritual atmosphere.”</span></p>
+          <strong>- <span class="ta-content">உள்ளூர் குடும்பம்</span><span class="en-content">Local Family</span></strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p><span class="ta-content">“திருமணம் மிகவும் சிறப்பாக நடைபெற்றது.”</span><span class="en-content">“The marriage function was conducted very well.”</span></p>
+          <strong>- <span class="ta-content">விழா குடும்பம்</span><span class="en-content">Function Family</span></strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p><span class="ta-content">“அறைகள், பார்க்கிங் மற்றும் தண்ணீர் வசதி நல்லது.”</span><span class="en-content">“Rooms, parking and water facilities are good.”</span></p>
+          <strong>- <span class="ta-content">விருந்தினர்</span><span class="en-content">Guest</span></strong>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        <span class="ta-content">பொது கருத்துக்களை அடிப்படையாகக் கொண்ட மாதிரி மதிப்புரைகள். Google reviews கிடைத்த பின் மாற்றலாம்.</span>
+        <span class="en-content">Sample testimonials based on general feedback. Replace with real Google reviews later.</span>
+      </p>
+    </section>
+
+    <section id="faq" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">கேள்விகள்</span>
@@ -1507,34 +1708,15 @@
       </div>
 
       <div class="faq">
-        <details>
-          <summary><span class="ta-content">முக்கிய மண்டபத்தில் எத்தனை பேர் அமரலாம்?</span><span class="en-content">How many people can sit in the main hall?</span></summary>
-          <p><span class="ta-content">முக்கிய மண்டபத்தில் சுமார் 250 பேர் அமரலாம்.</span><span class="en-content">The main hall can seat around 250 people.</span></p>
-        </details>
-
-        <details>
-          <summary><span class="ta-content">உணவகத்தில் எத்தனை பேர் அமரலாம்?</span><span class="en-content">How many people can sit in the dining hall?</span></summary>
-          <p><span class="ta-content">உணவகத்தில் சுமார் 120 பேர் அமரலாம்.</span><span class="en-content">The dining hall can seat around 120 people.</span></p>
-        </details>
-
-        <details>
-          <summary><span class="ta-content">அறை முன்பதிவு செய்யலாமா?</span><span class="en-content">Can we book rooms?</span></summary>
-          <p><span class="ta-content">ஆம். குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக அறைகள் உள்ளன. அறை முன்பதிவு தேதி மற்றும் கிடைக்கும் நிலை அடிப்படையில் வழங்கப்படும்.</span><span class="en-content">Yes. Rooms are available for family members and guests. Room booking is subject to date and availability.</span></p>
-        </details>
-
-        <details>
-          <summary><span class="ta-content">பூஜை முன்பதிவு செய்யலாமா?</span><span class="en-content">Can we book temple poojas?</span></summary>
-          <p><span class="ta-content">ஆம். பூஜை முன்பதிவுக்கு 9626940073, 9843408096, 9080656637, 6380193140 ஆகிய எண்களில் தொடர்பு கொள்ளலாம்.</span><span class="en-content">Yes. For pooja booking, please contact 9626940073, 9843408096, 9080656637, or 6380193140.</span></p>
-        </details>
-
-        <details>
-          <summary><span class="ta-content">GPay ஏற்கப்படுமா?</span><span class="en-content">Is GPay accepted?</span></summary>
-          <p><span class="ta-content">ஆம். GPay எண் 9159299878. ஆனால் பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span><span class="en-content">Yes. GPay number is 9159299878, but please confirm the booking by calling 9751672314 before making any payment.</span></p>
-        </details>
+        <details><summary><span class="ta-content">முக்கிய மண்டபத்தில் எத்தனை பேர் அமரலாம்?</span><span class="en-content">How many people can sit in the main hall?</span></summary><p><span class="ta-content">முக்கிய மண்டபத்தில் சுமார் 250 பேர் அமரலாம்.</span><span class="en-content">The main hall can seat around 250 people.</span></p></details>
+        <details><summary><span class="ta-content">உணவகத்தில் எத்தனை பேர் அமரலாம்?</span><span class="en-content">How many people can sit in the dining hall?</span></summary><p><span class="ta-content">உணவகத்தில் சுமார் 120 பேர் அமரலாம்.</span><span class="en-content">The dining hall can seat around 120 people.</span></p></details>
+        <details><summary><span class="ta-content">அறை முன்பதிவு செய்யலாமா?</span><span class="en-content">Can we book rooms?</span></summary><p><span class="ta-content">ஆம். குடும்பத்தினர் மற்றும் விருந்தினர்களுக்காக அறைகள் உள்ளன. அறை முன்பதிவு தேதி மற்றும் கிடைக்கும் நிலை அடிப்படையில் வழங்கப்படும்.</span><span class="en-content">Yes. Rooms are available for family members and guests. Room booking is subject to date and availability.</span></p></details>
+        <details><summary><span class="ta-content">பூஜை முன்பதிவு செய்யலாமா?</span><span class="en-content">Can we book temple poojas?</span></summary><p><span class="ta-content">ஆம். பூஜை முன்பதிவுக்கு 9626940073, 9843408096, 9080656637, 6380193140 ஆகிய எண்களில் தொடர்பு கொள்ளலாம்.</span><span class="en-content">Yes. For pooja booking, please contact 9626940073, 9843408096, 9080656637, or 6380193140.</span></p></details>
+        <details><summary><span class="ta-content">GPay ஏற்கப்படுமா?</span><span class="en-content">Is GPay accepted?</span></summary><p><span class="ta-content">ஆம். GPay எண் 9159299878. ஆனால் பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span><span class="en-content">Yes. GPay number is 9159299878, but please confirm the booking by calling 9751672314 before making any payment.</span></p></details>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-up">
       <div class="section-title">
         <span class="kicker">
           <span class="ta-content">தொடர்பு கொள்ள</span>
@@ -1557,12 +1739,7 @@
 
           <p>📞 <strong><span class="ta-content">மண்டபம் / அறை முன்பதிவு</span><span class="en-content">Hall / Room Booking</span>:</strong> <a href="tel:9751672314">9751672314</a></p>
 
-          <p>
-            📞 <strong>
-              <span class="ta-content">தொடர்பு எண்கள்</span>
-              <span class="en-content">Contact Us</span>
-            </strong>
-          </p>
+          <p>📞 <strong><span class="ta-content">தொடர்பு எண்கள்</span><span class="en-content">Contact Us</span></strong></p>
 
           <div class="contact-number-list">
             <a href="tel:9626940073">9626940073</a>
@@ -1576,12 +1753,7 @@
 
           <div class="button-row" style="justify-content:flex-start; margin-top:20px;">
             <a class="btn btn-light" href="tel:9751672314">📞 Mandapam Booking</a>
-
-            <a class="btn btn-green"
-               href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability."
-               target="_blank"
-               rel="noopener noreferrer">💬 WhatsApp</a>
-
+            <a class="btn btn-green" href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
             <a class="btn btn-gold" href="mailto:arulmiguammanmandapam1306@gmail.com?subject=Mandapam%20Booking%20Enquiry">📧 Email</a>
           </div>
         </div>
@@ -1593,20 +1765,10 @@
           </h3>
 
           <div class="button-row" style="justify-content:flex-start;">
-            <a class="btn btn-gold"
-               href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7"
-               target="_blank"
-               rel="noopener noreferrer">📍 Mandapam Location</a>
-
-            <a class="btn btn-red"
-               href="https://maps.app.goo.gl/YnaLi5uPnVDUwewQA"
-               target="_blank"
-               rel="noopener noreferrer">🛕 Temple Location</a>
-
-            <a class="btn btn-green"
-               href="https://wa.me/?text=Arulmigu%20Amman%20Thirumana%20Mandapam%20Booking%20Website%20-%20Add%20your%20live%20website%20link%20here"
-               target="_blank"
-               rel="noopener noreferrer">📤 Share Website</a>
+            <a class="btn btn-gold" href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7" target="_blank" rel="noopener noreferrer">📍 Mandapam Location</a>
+            <a class="btn btn-red" href="https://maps.app.goo.gl/YnaLi5uPnVDUwewQA" target="_blank" rel="noopener noreferrer">🛕 Temple Location</a>
+            <a class="btn btn-green" href="https://wa.me/?text=Arulmigu%20Amman%20Thirumana%20Mandapam%20Booking%20Website%20-%20Add%20your%20live%20website%20link%20here" target="_blank" rel="noopener noreferrer">📤 Share Website</a>
+            <a class="btn btn-blue" href="https://maps.app.goo.gl/3qVG81UswQEcy8ex7" target="_blank" rel="noopener noreferrer">⭐ Review us on Google</a>
           </div>
 
           <div style="margin-top:22px; border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(0,0,0,0.12);">
@@ -1627,12 +1789,34 @@
 
   <div class="floating-buttons">
     <a class="float-btn call-float" href="tel:9751672314" title="Call">☎</a>
+    <a class="float-btn whatsapp-float" href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability." target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
+    <button class="float-btn gpay-float" onclick="openGPay()" title="GPay">💳</button>
+  </div>
 
-    <a class="float-btn whatsapp-float"
-       href="https://wa.me/919751672314?text=Vanakkam%2C%20I%20want%20to%20check%20mandapam%20and%20room%20booking%20availability."
-       target="_blank"
-       rel="noopener noreferrer"
-       title="WhatsApp">💬</a>
+  <div class="gpay-modal" id="gpayModal">
+    <div class="gpay-card">
+      <h3>💳 GPay Available</h3>
+      <p>
+        <span class="ta-content">GPay எண்</span>
+        <span class="en-content">GPay Number</span>
+      </p>
+      <div class="gpay-number">9159299878</div>
+
+      <div class="qr-placeholder">
+        <span class="ta-content">GPay QR Code இங்கே சேர்க்கலாம்</span>
+        <span class="en-content">Add GPay QR Code Here</span>
+      </div>
+
+      <p class="disclaimer">
+        <span class="ta-content">பணம் செலுத்துவதற்கு முன் 9751672314 என்ற எண்ணில் முன்பதிவை உறுதிப்படுத்தவும்.</span>
+        <span class="en-content">Please confirm booking by calling 9751672314 before making payment.</span>
+      </p>
+
+      <div class="button-row" style="margin-top:18px;">
+        <a class="btn btn-green" href="tel:9751672314">📞 Confirm Booking</a>
+        <button class="btn btn-red" type="button" onclick="closeGPay()">Close</button>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -1650,6 +1834,11 @@
     <p style="margin-top:8px;">
       <span class="ta-content">இந்த இணையதளத்தில் online payment வசதி இல்லை. மண்டபம் மற்றும் அறை முன்பதிவுக்கு நேரடியாக அழைக்கவும்.</span>
       <span class="en-content">No online payment is collected on this website. Please call directly for hall and room booking.</span>
+    </p>
+
+    <p style="margin-top:8px;">
+      <span class="ta-content">இந்த இணையதளம் தகவல் மற்றும் முன்பதிவு தொடர்புகளுக்காக மட்டுமே.</span>
+      <span class="en-content">This website is intended only for information and booking communication.</span>
     </p>
 
     <p style="margin-top:8px;">
@@ -1676,6 +1865,34 @@
         document.documentElement.lang = "ta";
       }
     }
+
+    function openGPay() {
+      document.getElementById("gpayModal").classList.add("show");
+    }
+
+    function closeGPay() {
+      document.getElementById("gpayModal").classList.remove("show");
+    }
+
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.getElementById("loader").classList.add("hidden");
+      }, 600);
+    });
+
+    const fadeItems = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeItems.forEach(function (item) {
+      observer.observe(item);
+    });
   </script>
 </body>
 </html>
